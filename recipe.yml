@@ -47,7 +47,7 @@ stages:
       - name: upgrade-kernel
         type: shell
         commands:
-          - apt remove -y linux-image-amd64 linux-headers-amd64
+          - apt purge -y linux-image-amd64 linux-headers-amd64
           - apt install -t experimental -y linux-image-amd64 linux-headers-amd64
           - rm -f /usr/share/vanilla/kernel-version
           - echo "$(ls -1 /usr/lib/modules | tail -n 1)" > /usr/share/vanilla/kernel-version
